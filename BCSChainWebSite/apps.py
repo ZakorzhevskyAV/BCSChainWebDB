@@ -11,9 +11,3 @@ from django.apps import AppConfig
 class BcschainwebsiteConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'BCSChainWebSite'
-
-    """def ready(self):  # Закомментировать это, сделать миграцию, раскомментировать это
-        from .tasks import blockchain_update
-        from background_task.models import Task
-        Task.objects.all().delete()
-        blockchain_update()"""

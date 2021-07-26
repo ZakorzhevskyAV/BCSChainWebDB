@@ -1,6 +1,9 @@
 from .models import Block
 from django.shortcuts import render
 from .tables import BlockTable
+from .tasks import blockchain_update
+from background_task.models import Task
+from django.http import HttpResponse
 
 
 def index(request):
@@ -16,3 +19,10 @@ def block_page(request, block_height=None):
         block_object = Block.objects.filter(height=block_height)
         table = BlockTable(block_object)
         return render(request, 'index.html', {'table': table})
+
+
+def start_background_updating(request):
+    if request.method == 'GET':
+        Task.objects.all().delete()
+        blockchain_update()
+        return HttpResponse('Background updating has started')
