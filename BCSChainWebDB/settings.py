@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-ganz8^jl*th28^pw((+s$o)dl)%#pr98ii(0)@ki8p-i+y5^(y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://bcschainwebdb.herokuapp.com/',
+]
 
 # Application definition
 
@@ -131,3 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import django_on_heroku
 
 django_on_heroku.settings(locals())
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -14,6 +14,7 @@ django-excel-response2==3.0.2
 django-on-heroku==1.1.2
 django-six==1.0.4
 django-tables2==2.4.0
+gunicorn==20.1.0
 idna==3.2
 psycopg2==2.8
 psycopg2-binary==2.8.5
