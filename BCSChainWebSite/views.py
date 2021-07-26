@@ -21,7 +21,7 @@ def block_page(request, block_height=None):
         return render(request, 'index.html', {'table': table})
 
 
-def start_background_updating(request):
+def start_background(request):
     if request.method == 'GET':
         Task.objects.all().delete()
         blockchain_update()
